@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Device">
+      <UniqueIdentifier>{82c2c68d-960c-4f2c-b070-e23eba70b32f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pipeline">
+      <UniqueIdentifier>{4786bf87-1e79-447a-aacb-7c999d5abf95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{bc0481ff-c82c-4c28-9ae8-58f0d770aed2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{a62bb57f-702d-475b-b348-a722050a5477}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Shader">
+      <UniqueIdentifier>{883d91aa-fcca-4660-b349-b977902e6da7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Buffer">
+      <UniqueIdentifier>{61f9a4b6-3cb7-4f1e-b721-52af6ba721ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Camera">
+      <UniqueIdentifier>{5b2fe828-a104-4744-bef3-502fddf6382e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Geometry">
+      <UniqueIdentifier>{766b6cb9-5ea7-41cc-8cea-355890b417ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Texture">
+      <UniqueIdentifier>{c3205e76-f53a-42d9-b3d8-c7bf24014880}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Postprocessing">
+      <UniqueIdentifier>{0d0e12cc-6b9c-4060-b0f9-2aaa0b6b8260}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\RectanguLand.Graphics\RenderTargetEntry.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\Precompiled.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\GraphicsException.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\PublicInclude.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\GxPipeline.h">
+      <Filter>Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\GxPipelineD3D11.h">
+      <Filter>Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\Native.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\GxDevice.h">
+      <Filter>Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\GxDeviceD3D11.h">
+      <Filter>Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\WorldFrame.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\DrawManager.h">
+      <Filter>Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\IDrawable.h">
+      <Filter>Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\SceneManager.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\SceneNode.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\SceneRoot.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\Effect.h">
+      <Filter>Objects\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\ShaderCode.h">
+      <Filter>Objects\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\Objects\ShaderCodeD3D11.h">
+      <Filter>Objects\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\ShaderObject.h">
+      <Filter>Objects\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\ShaderObjectD3D11.h">
+      <Filter>Objects\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\Objects\VertexBufferD3D11.h">
+      <Filter>Objects\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\Objects\VertexBuffer.h">
+      <Filter>Objects\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\Objects\IndexBufferD3D11.h">
+      <Filter>Objects\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\Objects\IndexBuffer.h">
+      <Filter>Objects\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\Objects\Buffer.h">
+      <Filter>Objects\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\Objects\BufferD3D11.h">
+      <Filter>Objects\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\Defines.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\ApiObject.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\Camera.h">
+      <Filter>Scene\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\OrthoCamera.h">
+      <Filter>Scene\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\PerspCamera.h">
+      <Filter>Scene\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\GlobalBufferManager.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\VertexElement.h">
+      <Filter>Scene\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\InputGeometry.h">
+      <Filter>Scene\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\GeometryLayout.h">
+      <Filter>Scene\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\GeometryLayoutD3D11.h">
+      <Filter>Scene\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\Objects\Texture.h">
+      <Filter>Objects\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\Objects\TextureD3D11.h">
+      <Filter>Objects\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\SamplerState.h">
+      <Filter>Objects\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\SamplerStateD3D11.h">
+      <Filter>Objects\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\CubeDraw.h">
+      <Filter>Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\RenderTarget.h">
+      <Filter>Objects\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\RenderTargetD3D11.h">
+      <Filter>Objects\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Graphics\SSAO.h">
+      <Filter>Postprocessing</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\RectanguLand.Graphics\Precompiled.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\RenderTargetEntry.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\GxPipeline.cpp">
+      <Filter>Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\GxPipelineD3D11.cpp">
+      <Filter>Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\GxDeviceD3D11.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\GxDevice.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\WorldFrame.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\DrawManager.cpp">
+      <Filter>Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\SceneManager.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\SceneNode.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\SceneRoot.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\Effect.cpp">
+      <Filter>Objects\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\ShaderCode.cpp">
+      <Filter>Objects\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\Objects\ShaderCodeD3D11.cpp">
+      <Filter>Objects\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\ShaderObject.cpp">
+      <Filter>Objects\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\ShaderObjectD3D11.cpp">
+      <Filter>Objects\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\Objects\VertexBufferD3D11.cpp">
+      <Filter>Objects\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\Objects\VertexBuffer.cpp">
+      <Filter>Objects\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\Objects\IndexBufferD3D11.cpp">
+      <Filter>Objects\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\Objects\IndexBuffer.cpp">
+      <Filter>Objects\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\Objects\Buffer.cpp">
+      <Filter>Objects\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\Objects\BufferD3D11.cpp">
+      <Filter>Objects\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\Camera.cpp">
+      <Filter>Scene\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\OrthoCamera.cpp">
+      <Filter>Scene\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\PerspCamera.cpp">
+      <Filter>Scene\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\GlobalBufferManager.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\VertexElement.cpp">
+      <Filter>Scene\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\InputGeometry.cpp">
+      <Filter>Scene\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\GeometryLayout.cpp">
+      <Filter>Scene\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\GeometryLayoutD3D11.cpp">
+      <Filter>Scene\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\Objects\Texture.cpp">
+      <Filter>Objects\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\Objects\TextureD3D11.cpp">
+      <Filter>Objects\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\SamplerState.cpp">
+      <Filter>Objects\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\SamplerStateD3D11.cpp">
+      <Filter>Objects\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\CubeDraw.cpp">
+      <Filter>Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\RenderTarget.cpp">
+      <Filter>Objects\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\RenderTargetD3D11.cpp">
+      <Filter>Objects\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\SSAO.cpp">
+      <Filter>Postprocessing</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

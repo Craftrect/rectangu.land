@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C10B2ECA-1DC2-47E1-AAF1-E01130C5906C}</ProjectGuid>
+    <RootNamespace>RectanguLandGraphics</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_CTP_Nov2012</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120_CTP_Nov2012</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir)/dep/include/;$(SolutionDir)/src/;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)/dep/lib/$(Configuration)/$(PlatformTarget);$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)\lib\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)\lib\$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)/dep/include/;$(SolutionDir)/src/;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)/dep/lib/$(Configuration)/$(PlatformTarget);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>Precompiled.h</PrecompiledHeaderFile>
+      <PreprocessorDefinitions>_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\src\$(ProjectName)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)\src\$(ProjectName)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>precompiled.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\RectanguLand.Graphics\ApiObject.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\Camera.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\CubeDraw.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\Defines.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\DrawManager.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\Effect.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\GeometryLayout.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\GeometryLayoutD3D11.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\GlobalBufferManager.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\GraphicsException.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\GxDevice.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\GxDeviceD3D11.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\GxPipeline.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\GxPipelineD3D11.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\IDrawable.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\InputGeometry.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\Native.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\Objects\Buffer.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\Objects\BufferD3D11.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\Objects\IndexBuffer.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\Objects\IndexBufferD3D11.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\Objects\ShaderCodeD3D11.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\Objects\Texture.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\Objects\TextureD3D11.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\Objects\VertexBuffer.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\Objects\VertexBufferD3D11.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\OrthoCamera.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\PerspCamera.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\Precompiled.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\PublicInclude.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\RenderTarget.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\RenderTargetD3D11.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\RenderTargetEntry.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\SamplerState.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\SamplerStateD3D11.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\SceneManager.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\SceneNode.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\SceneRoot.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\ShaderCode.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\ShaderObject.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\ShaderObjectD3D11.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\SSAO.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\VertexElement.h" />
+    <ClInclude Include="..\src\RectanguLand.Graphics\WorldFrame.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\RectanguLand.Graphics\Camera.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\CubeDraw.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\DrawManager.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\Effect.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\GeometryLayout.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\GeometryLayoutD3D11.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\GlobalBufferManager.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\GxDevice.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\GxDeviceD3D11.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\GxPipeline.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\GxPipelineD3D11.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\InputGeometry.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\Objects\Buffer.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\Objects\BufferD3D11.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\Objects\IndexBuffer.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\Objects\IndexBufferD3D11.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\Objects\ShaderCodeD3D11.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\Objects\Texture.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\Objects\TextureD3D11.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\Objects\VertexBuffer.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\Objects\VertexBufferD3D11.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\OrthoCamera.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\PerspCamera.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\Precompiled.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Graphics\RenderTarget.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\RenderTargetD3D11.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\RenderTargetEntry.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\SamplerState.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\SamplerStateD3D11.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\SceneManager.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\SceneNode.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\SceneRoot.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\ShaderCode.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\ShaderObject.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\ShaderObjectD3D11.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\SSAO.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\VertexElement.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Graphics\WorldFrame.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="..\src\RectanguLand.Utils\PublicInclude.h" />
+    <ClInclude Include="..\src\RectanguLand.Utils\String.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Utils\Singleton.h" />
+    <ClInclude Include="..\src\RectanguLand.Utils\Log.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Utils\Dispatcher.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Utils\BinaryStream.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Utils\ZInflater.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Utils\Stopwatch.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Utils\Matrix.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Utils\Vector3.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Utils\Event.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Utils\SimplexNoise.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Utils\PerlinNoise.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Utils\ZDeflater.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Utils\Vector4.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Utils\MersenneTwister.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\RectanguLand.Utils\PublicInclude.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Utils\String.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Utils\Log.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Utils\Dispatcher.cpp">
+      <Filter>Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Utils\BinaryStream.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Utils\ZInflater.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Utils\Stopwatch.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Utils\Matrix.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Utils\Vector3.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Utils\Event.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Utils\SimplexNoise.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Utils\PerlinNoise.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Utils\ZDeflater.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Utils\Vector4.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Utils\MersenneTwister.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="String">
+      <UniqueIdentifier>{35d2dd29-7072-404b-b2c2-94470c5867a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Log">
+      <UniqueIdentifier>{8f717faa-caae-486e-8d3c-07fec99a77bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Threading">
+      <UniqueIdentifier>{45a76f6f-406d-498e-a181-1e52feb68f2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IO">
+      <UniqueIdentifier>{e6fc2f21-d899-4831-8143-9c68abbeae2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{1435f905-2293-414d-b56f-758270864118}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{80f717db-7e74-4159-9f57-d5dbff2a2892}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

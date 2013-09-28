@@ -1,0 +1,65 @@
+Texture2D gBuffer : register(t0);
+Texture2D randTexture : register(t1);
+
+SamplerState texSampler;
+
+cbuffer SSAOInfo : register(b0)
+{
+	matrix invProj;
+	matrix proj;
+	float4 sampleKernel[16];
+	float2 noiseScale;
+	float radius;
+	float unused;
+};
+
+struct PS_Input
+{
+	float4 position : SV_POSITION;
+	float2 texCoord : TEXCOORD0;
+};
+
+float3 PositionVSFromDepth(float2 texCoord, float4 ginfo) {
+	float z = ginfo.w;
+	float x = texCoord.x * 2 - 1;
+	float y = (1 - texCoord.y) * 2 - 1;
+	
+	float4 proj = float4(x, y, z, 1.0);
+	float4 unproj = mul(proj, invProj);
+	return unproj.xyz / unproj.w;
+}
+
+float4 pixelShaderMain(PS_Input input) : SV_TARGET {
+	float4 ginfo = gBuffer.Sample(texSampler, input.texCoord);
+	
+	float3 origin = PositionVSFromDepth(input.texCoord, ginfo);
+	float3 normal = ginfo.xyz;
+	normal = normalize(normal);
+
+	float3 rsamp = randTexture.Sample(texSampler, input.texCoord * noiseScale).xyz;
+	float3 rvec = rsamp;
+	float3 tangent = normalize(rvec - normal * dot(rvec, normal));
+	float3 bitangent = cross(normal, tangent);
+	float3x3 tbn = float3x3(tangent, bitangent, normal);
+
+	float occlusion = 0.0;
+
+	[Unroll]
+	for(int i = 0; i < 1; ++i) {
+		float3 csample = mul(sampleKernel[i].xyz, tbn);
+		csample = csample * radius + origin;
+
+		float4 offset = float4(csample, 1.0);
+		offset = mul(offset, proj);
+		offset.xy /= offset.w;
+		offset.xy = offset.xy * 0.5 + 0.5;
+
+		float depth = gBuffer.Sample(texSampler, offset.xy).w;
+		float rangeCheck = abs(origin.z - depth) < radius ? 1.0 : 0.0;
+		
+		occlusion += (depth <= csample.z ? 1.0 : 0.0) * rangeCheck;
+	}
+
+	occlusion = 1.0 - (occlusion / 16.0);
+	return float4(occlusion, occlusion, occlusion, 1.0);
+}

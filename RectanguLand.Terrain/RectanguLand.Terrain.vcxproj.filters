@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{be26dc2a-6648-4fd0-8eff-33d521aed9fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generation">
+      <UniqueIdentifier>{c3220b31-70ac-4231-bb15-33ed6c1ea35b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\RectanguLand.Terrain\stdafx.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Terrain\MapChunk.cpp">
+      <Filter>Data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Terrain\TerrainNoise.cpp">
+      <Filter>Generation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Terrain\ChunkManager.cpp">
+      <Filter>Data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Terrain\WorldManager.cpp">
+      <Filter>Data</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\RectanguLand.Terrain\stdafx.h" />
+    <ClInclude Include="..\src\RectanguLand.Terrain\MapChunk.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Terrain\TerrainNoise.h">
+      <Filter>Generation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Terrain\PublicInclude.h" />
+    <ClInclude Include="..\src\RectanguLand.Terrain\ChunkManager.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Terrain\WorldManager.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

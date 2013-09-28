@@ -1,0 +1,22 @@
+struct VS_Input
+{
+	float4 position : POSITION0;
+	float4 faceLights0 : TEXCOORD0;
+	float4 faceLights1 : TEXCOORD1;
+};
+
+struct GS_Input
+{	
+	float4 Position : POSITION0;
+	float4 faceLights0 : TEXCOORD0;
+	float4 faceLights1 : TEXCOORD1;
+};
+
+GS_Input vertexMain(VS_Input input) {
+	GS_Input output = (GS_Input)0;
+	output.Position = input.position;
+	output.faceLights0 = input.faceLights0;
+	output.faceLights1 = input.faceLights1;
+
+	return output;
+}

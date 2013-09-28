@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="..\src\RectanguLand.Content\Precompiled.h" />
+    <ClInclude Include="..\src\RectanguLand.Content\Loader\TextureLoader.h">
+      <Filter>Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Content\Loader\TextureLoaderD3D11.h">
+      <Filter>Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Content\Loader\ImageLoader.h">
+      <Filter>Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Content\AssetManager.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Content\ResourceLocation.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Content\FileSystemResourceLocation.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Content\ZipResourceLocation.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Content\ResourceManager.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Content\dds.h">
+      <Filter>Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Content\EffectCollection.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Content\TextureManager.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\RectanguLand.Content\Precompiled.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Content\Loader\TextureLoaderD3D11.cpp">
+      <Filter>Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Content\Loader\ImageLoader.cpp">
+      <Filter>Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Content\Loader\TextureLoader.cpp">
+      <Filter>Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Content\AssetManager.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Content\ResourceLocation.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Content\FileSystemResourceLocation.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Content\ZipResourceLocation.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Content\ResourceManager.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Content\EffectCollection.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Content\TextureManager.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{d3b44e01-ccf5-409c-baea-ea1e72adf98c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Loader">
+      <UniqueIdentifier>{2946b41d-3260-4376-908d-5f408f989444}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

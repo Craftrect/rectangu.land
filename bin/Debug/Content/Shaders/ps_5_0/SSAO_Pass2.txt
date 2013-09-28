@@ -1,0 +1,20 @@
+Texture2D colorBuffer : register(t0);
+Texture2D occlusionBuffer : register(t1);
+
+SamplerState texSampler;
+
+struct PS_Input
+{
+	float4 position : SV_POSITION;
+	float2 texCoord : TEXCOORD0;
+};
+
+
+float4 pixelShaderMain(PS_Input input) : SV_TARGET {
+	float4 texColor = colorBuffer.Sample(texSampler, input.texCoord);
+	float occlusion = occlusionBuffer.Sample(texSampler, input.texCoord).r;
+
+	texColor.rgb *= occlusion;
+
+	return texColor;
+}

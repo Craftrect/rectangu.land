@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="..\src\RectanguLand.IO\stdafx.h" />
+    <ClInclude Include="..\src\RectanguLand.IO\KeyboardState.h">
+      <Filter>Keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.IO\Keyboard.h">
+      <Filter>Keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.IO\PublicInclude.h" />
+    <ClInclude Include="..\src\RectanguLand.IO\MouseState.h">
+      <Filter>Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.IO\Mouse.h">
+      <Filter>Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.IO\IoManager.h" />
+    <ClInclude Include="..\src\RectanguLand.IO\BindingManager.h">
+      <Filter>Bindings</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\RectanguLand.IO\stdafx.cpp" />
+    <ClCompile Include="..\src\RectanguLand.IO\KeyboardState.cpp">
+      <Filter>Keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.IO\Keyboard.cpp">
+      <Filter>Keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.IO\MouseState.cpp">
+      <Filter>Mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.IO\Mouse.cpp">
+      <Filter>Mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.IO\IoManager.cpp" />
+    <ClCompile Include="..\src\RectanguLand.IO\BindingManager.cpp">
+      <Filter>Bindings</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Keyboard">
+      <UniqueIdentifier>{710178eb-c00c-4304-ab8e-b736a22c6e60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mouse">
+      <UniqueIdentifier>{3514adc6-adc4-4bd7-9fb6-2eb36a805fb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bindings">
+      <UniqueIdentifier>{9484b575-aa8e-4df4-9c25-98a76530805d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

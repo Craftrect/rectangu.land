@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="UI">
+      <UniqueIdentifier>{ceb7ca36-32df-4847-828a-2b629ddeec74}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\src\RectanguLand.Tools.Font\Resources.rc">
+      <Filter>UI</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\RectanguLand.Tools.Font\MainWindow.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Tools.Font\stdafx.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Tools.Font\Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\RectanguLand.Tools.Font\MainWindow.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Tools.Font\resource.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RectanguLand.Tools.Font\stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon_main.ico" />
+    <Image Include="..\src\RectanguLand.Tools.Font\icon_main.ico" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,161 @@
+cbuffer MatrixBuffer : register(c0)
+{
+	matrix World;
+	matrix View;
+	matrix Projection;
+};
+
+struct GS_Input
+{	
+	float4 Position : POSITION0;
+	float4 faceLights0 : TEXCOORD0;
+	float4 faceLights1 : TEXCOORD1;
+};
+
+struct PS_Input
+{
+	float4 Position : SV_POSITION;
+	float4 Normal : TEXCOORD1;
+	float3 TexCoord : TEXCOORD2;
+	float Light : TEXCOORD3;
+	float3 normVS : TEXCOORD4;
+	float Occlusion : TEXCOORD5;
+};
+
+[maxvertexcount(24)]
+void geometryMain(point GS_Input input[1], inout TriangleStream<PS_Input> cubeStream) {
+	const float cubeSize = 1;
+
+	float4x4 WVP = mul(mul(World, View), Projection);
+	PS_Input output;
+
+	float4 topLeftFront = mul(float4( float3(-0.5f, 0.5f, -0.5f) * cubeSize + input[0].Position.xyz, 1.0f), WVP);
+	float4 bottomLeftFront = mul(float4( float3(-0.5f, -0.5f, -0.5f) * cubeSize + input[0].Position.xyz, 1.0f), WVP);
+	float4 topRightFront = mul(float4( float3(0.5f, 0.5f, -0.5f) * cubeSize + input[0].Position.xyz, 1.0f), WVP);
+	float4 bottomRightFront = mul(float4( float3(0.5f, -0.5f, -0.5f) * cubeSize + input[0].Position.xyz, 1.0f), WVP);
+	float4 topLeftBack = mul(float4( float3(-0.5f, 0.5f, 0.5f) * cubeSize + input[0].Position.xyz, 1.0f), WVP);
+	float4 topRightBack = mul(float4( float3(0.5f, 0.5f, 0.5f) * cubeSize + input[0].Position.xyz, 1.0f), WVP);
+	float4 bottomLeftBack = mul(float4( float3(-0.5f, -0.5f, 0.5f) * cubeSize + input[0].Position.xyz, 1.0f), WVP);
+	float4 bottomRightBack = mul(float4( float3(0.5f, -0.5f, 0.5f) * cubeSize + input[0].Position.xyz, 1.0f), WVP);
+
+	float4 frontNormal = mul(float4(0.0f, 0.0f, 1.0f, 0.0f), World);
+	float4 backNormal = mul(float4(0.0f, 0.0f, -1.0f, 0.0f), World);
+	float4 topNormal = mul(float4(0.0f, 1.0f, 0.0f, 0.0f), World);
+	float4 bottomNormal = mul(float4(0.0f, -1.0f, 0.0f, 0.0f), World);
+	float4 leftNormal = mul(float4(-1.0f, 0.0f, 0.0f, 0.0f), World);
+	float4 rightNormal = mul(float4(1.0f, 0.0f, 0.0f, 0.0f), World);
+
+	float4 normals[6] = 		
+	{
+		frontNormal ,	
+		bottomNormal ,	
+		backNormal,		
+		topNormal,		
+		leftNormal,		
+		rightNormal
+	};
+
+	float4 cubePoints[24] = 
+	{
+		bottomLeftFront,	topLeftFront,			bottomRightFront,	topRightFront,		// Front 
+		bottomLeftFront,	bottomRightFront,		bottomLeftBack,		bottomRightBack,	// Bottom 
+		bottomLeftBack,		bottomRightBack,		topLeftBack,		topRightBack,		// Back
+		topLeftFront,		topLeftBack,			topRightFront,		topRightBack,		// Top 
+		bottomLeftBack,		topLeftBack,			bottomLeftFront,	topLeftFront,		// Left
+		bottomRightFront,	topRightFront,			bottomRightBack,	topRightBack		// Right
+	};
+
+	float3 texFBL = normalize(float3(-1, -1, -1));
+	float3 texFBR = normalize(float3(1, -1, -1));
+	float3 texBBL = normalize(float3(-1, 1, -1));
+	float3 texBBR = normalize(float3(1, 1, -1));
+	float3 texFTL = normalize(float3(-1, -1, 1));
+	float3 texFTR = normalize(float3(1, -1, 1));
+	float3 texBTL = normalize(float3(-1, 1, 1));
+	float3 texBTR = normalize(float3(1, 1, 1));
+
+
+	float3 texCoords[24] =
+	{
+		texFBL, texFTL, texFBR, texFTR,
+		texFBL, texFBR, texBBL, texBBR,
+		texBBL, texBBR, texBTL, texBTR,
+		texFTL, texBTL, texFTR, texBTR,
+		texBBL, texBTL, texFBL, texFTL,
+		texFBR, texFTR, texBBR, texBTR
+	};
+	
+	float4 faces0 = input[0].faceLights0;
+	float4 faces1 = input[0].faceLights1;
+
+	float occlusions[24] = 
+	{
+		faces1.x, faces0.x, faces1.y, faces0.y,
+		faces1.x, faces1.y, faces1.w, faces1.z,
+		faces1.w, faces1.z, faces0.w, faces0.z,
+		faces0.x, faces0.w, faces0.y, faces0.z,
+		faces1.w, faces0.w, faces1.x, faces0.x,
+		faces1.y, faces0.y, faces1.z, faces0.z
+	};
+
+	for(int i=0; i<6; i++)
+	{	
+		float a10 = occlusions[i * 4];
+		float a00 = occlusions[i * 4 + 1];
+		float a11 = occlusions[i * 4 + 2];
+		float a01 = occlusions[i * 4 + 3];
+		
+		if(a00 + a11 > a01 + a10) {
+			output.Position = cubePoints[i * 4];
+			output.Normal = normals[i];
+			output.normVS = mul(output.Normal, View).xyz;
+			output.TexCoord = texCoords[i * 4];
+			output.Light = max(0.6f, dot(output.Normal, float3(-1, 0, -1)));
+			output.Occlusion = occlusions[i * 4];
+			
+			cubeStream.Append(output);
+
+			output.Position = cubePoints[i * 4 + 1];
+			output.TexCoord = texCoords[i * 4 + 1];
+			output.Occlusion = occlusions[i * 4 + 1];
+			cubeStream.Append(output);
+			
+			output.Position = cubePoints[i * 4 + 2];
+			output.TexCoord = texCoords[i * 4 + 2];
+			output.Occlusion = occlusions[i * 4 + 2];
+			cubeStream.Append(output);
+
+			output.Position = cubePoints[i * 4 + 3];
+			output.TexCoord = texCoords[i * 4 + 3];
+			output.Occlusion = occlusions[i * 4 + 3];
+			cubeStream.Append(output);
+		} else {
+			output.Normal = normals[i];
+			output.normVS = mul(output.Normal, View).xyz;
+			output.Light = max(0.6f, dot(output.Normal, float3(-1, 0, -1)));
+
+			output.Position = cubePoints[i * 4 + 2];
+			output.TexCoord = texCoords[i * 4 + 2];
+			output.Occlusion = occlusions[i * 4 + 2];
+			
+			cubeStream.Append(output);
+
+			output.Position = cubePoints[i * 4];
+			output.TexCoord = texCoords[i * 4];
+			output.Occlusion = occlusions[i * 4];
+			cubeStream.Append(output);
+			
+			output.Position = cubePoints[i * 4 + 3];
+			output.TexCoord = texCoords[i * 4 + 3];
+			output.Occlusion = occlusions[i * 4 + 3];
+			cubeStream.Append(output);
+
+			output.Position = cubePoints[i*4 + 1];
+			output.TexCoord = texCoords[i * 4 + 1];
+			output.Occlusion = occlusions[i * 4 + 1];
+			cubeStream.Append(output);
+		}
+		
+		cubeStream.RestartStrip();	    
+	}
+}

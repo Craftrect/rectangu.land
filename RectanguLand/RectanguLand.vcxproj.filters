@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Win32">
+      <UniqueIdentifier>{4e6de3e2-3ba8-45fb-8aa0-101be409b234}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\RectanguLand\Precompiled.h" />
+    <ClInclude Include="..\src\RectanguLand\Win32\Window.h">
+      <Filter>Win32</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\RectanguLand\Precompiled.cpp" />
+    <ClCompile Include="..\src\RectanguLand\Master.cpp" />
+    <ClCompile Include="..\src\RectanguLand\Win32\Window.cpp">
+      <Filter>Win32</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

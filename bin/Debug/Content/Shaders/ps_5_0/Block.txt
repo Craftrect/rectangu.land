@@ -1,0 +1,33 @@
+struct PS_Input
+{
+	float4 position : SV_POSITION;
+	float4 normal : TEXCOORD1;
+	float3 texCoord : TEXCOORD2;
+	float light : TEXCOORD3;
+	float3 normalVS : TEXCOORD4;
+	float Occlusion : TEXCOORD5;
+};
+
+struct PS_Output
+{
+	float4 color : SV_TARGET0;
+	float4 ssaoInfo : SV_TARGET1;
+};
+
+TextureCube BlockTexture : register(t0);
+SamplerState BlockSampler : register(s0);
+
+PS_Output pixelShaderMain(PS_Input input) {
+	float3 diffuse = float3(1, 1, 1);
+	float3 ambient = float3(0.2f, 0.2f, 0.2f);
+
+	float4 texColor = BlockTexture.Sample(BlockSampler, input.texCoord);
+	texColor.rgb *= input.light * diffuse;
+	texColor.rgb *= lerp(0.5f, 1.0f, input.Occlusion);
+
+	PS_Output output = (PS_Output)0;
+	output.color = float4(0, lerp(0.4f, 1.0f, input.Occlusion) * input.light * 0.7f, 0, 1);
+	output.ssaoInfo = float4(input.normalVS, input.position.z / input.position.w);
+
+	return output;
+}

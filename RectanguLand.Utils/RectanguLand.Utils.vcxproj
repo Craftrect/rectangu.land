@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{43A88AD3-2A4E-4175-BECC-8F8AA7CC3141}</ProjectGuid>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+    <RootNamespace>RectanguLandUtils</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_CTP_Nov2012</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120_CTP_Nov2012</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir)/dep/include/;$(SolutionDir)/src/;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);</IncludePath>
+    <OutDir>$(SolutionDir)\lib\$(Configuration)\</OutDir>
+    <LibraryPath>$(SolutionDir)/dep/lib/$(Configuration)/$(PlatformTarget);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)\lib\$(Configuration)\</OutDir>
+    <LibraryPath>$(SolutionDir)/dep/lib/$(Configuration)/$(PlatformTarget);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)/dep/include/;$(SolutionDir)/src/;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>publicinclude.h</PrecompiledHeaderFile>
+      <PreprocessorDefinitions>U_STATIC_IMPLEMENTATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>zlib.lib;sicuucd.lib;sicuind.lib;sicudtd.lib</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>publicinclude.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\RectanguLand.Utils\BinaryStream.h" />
+    <ClInclude Include="..\src\RectanguLand.Utils\Dispatcher.h" />
+    <ClInclude Include="..\src\RectanguLand.Utils\Event.h" />
+    <ClInclude Include="..\src\RectanguLand.Utils\Log.h" />
+    <ClInclude Include="..\src\RectanguLand.Utils\Matrix.h" />
+    <ClInclude Include="..\src\RectanguLand.Utils\MersenneTwister.h" />
+    <ClInclude Include="..\src\RectanguLand.Utils\PerlinNoise.h" />
+    <ClInclude Include="..\src\RectanguLand.Utils\PublicInclude.h" />
+    <ClInclude Include="..\src\RectanguLand.Utils\SimplexNoise.h" />
+    <ClInclude Include="..\src\RectanguLand.Utils\Singleton.h" />
+    <ClInclude Include="..\src\RectanguLand.Utils\Stopwatch.h" />
+    <ClInclude Include="..\src\RectanguLand.Utils\String.h" />
+    <ClInclude Include="..\src\RectanguLand.Utils\Vector3.h" />
+    <ClInclude Include="..\src\RectanguLand.Utils\Vector4.h" />
+    <ClInclude Include="..\src\RectanguLand.Utils\ZDeflater.h" />
+    <ClInclude Include="..\src\RectanguLand.Utils\ZInflater.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\RectanguLand.Utils\BinaryStream.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Utils\Dispatcher.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Utils\Event.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Utils\Log.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Utils\Matrix.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Utils\MersenneTwister.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Utils\PerlinNoise.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Utils\PublicInclude.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\src\RectanguLand.Utils\SimplexNoise.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Utils\Stopwatch.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Utils\String.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Utils\Vector3.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Utils\Vector4.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Utils\ZDeflater.cpp" />
+    <ClCompile Include="..\src\RectanguLand.Utils\ZInflater.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
